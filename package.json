@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "nodemon server.js",
         "build": "next build",
-        "clean": "rm -rf ./static/manifest ./static/workbox .next",
+        "clean": "rm -rf ./static/manifest ./static/workbox out .next",
         "start": "NODE_ENV=production node server.js",
         "generate": "next build && next export"
     },
