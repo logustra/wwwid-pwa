@@ -1,5 +1,5 @@
 ## WWWID - PWA
-Example PWA project
+Example PWA project <br />
 This application is built for [WWWID Challenge](https://medium.com/wwwid/tantangan-web-developer-untuk-membuat-aplikasi-web-bisa-digunakan-kurang-dari-5-detik-70bb7431741d).
 
 ## Quick Start
