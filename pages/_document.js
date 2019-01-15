@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
                     <NextScript />
                     <ServiceWorker
                         src={'./static/workbox/sw.js'}
-                        scope={'/'}
+                        scope={'../'}
                     />
                 </body>
             </html>

@@ -51,7 +51,7 @@ module.exports = withPlugins([
                 runtimeCaching: [
                     {
                         urlPattern: /^https?.*/,
-                        handler: 'networkFirst'
+                        handler: 'staleWhileRevalidate'
                     }
                 ]
             }
@@ -63,7 +63,7 @@ module.exports = withPlugins([
                 name: 'WWWID - PWA',
                 short_name: 'WWWID - PWA',
                 icons: {
-                    src: './assets/icons/icon-512x512.png',
+                    src: './static/icons/icon-512x512.png',
                     cache: true
                 }
             }
