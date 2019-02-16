@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import Styled from 'styled-components'
-import FooterItem from './footerItem/FooterItem';
+import FooterItem from './FooterItem';
 
 class Navbar extends Component {
     constructor(props) {

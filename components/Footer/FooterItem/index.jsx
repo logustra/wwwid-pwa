@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const FooterItem = (props) => {
+const FooterItem = props => {
     let item
 
     if (props.type === 'next-link') {

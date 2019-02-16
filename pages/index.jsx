@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import axios from '../lib/Axios'
 
-import Layout from '../components/layout/Layout'
-import Card from '../components/card/Card'
+import Layout from '../components/Layout'
+import Card from '../components/Card'
 
 class Home extends Component {
     constructor(props) {

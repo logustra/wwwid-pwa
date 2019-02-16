@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Head from '../head/Head'
-import Navbar from '../navbar/Navbar'
-import Footer from '../footer/Footer';
+import Head from '../Head'
+import Navbar from '../Navbar'
+import Footer from '../Footer';
 
 import GlobalStyle from '../../styles/Main'
 

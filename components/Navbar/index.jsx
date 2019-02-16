@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Styled from 'styled-components'
-import NavbarItem from './navbarItem/NavbarItem';
+import NavbarItem from './NavbarItem';
 
 const StyledNavbar = Styled.nav`
     .list-item:first-child {
