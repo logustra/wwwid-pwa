@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import Head from '../Head'
 import Navbar from '../Navbar'
 import Foobar from '../Foobar';
@@ -7,7 +7,7 @@ import GlobalStyle from '../../styles/Main'
 
 export default function Layout(props) {
     return (
-        <React.Fragment>
+        <Fragment>
             <Head title={props.title} description={props.description} />
             <GlobalStyle />
             <Navbar />
@@ -17,6 +17,6 @@ export default function Layout(props) {
                 </div>
             </main>
             <Foobar />
-        </React.Fragment>
+        </Fragment>
     )
 }

@@ -1,15 +1,14 @@
+import React, {Fragment} from 'react'
 import Colors from './base/Colors'
 import Base from './base/Base'
 import Spacing from './base/Spacing'
 
-const Style = () => {
+export default function Style() {
     return (
-        <React.Fragment>
+        <Fragment>
             <Colors />
             <Base />
             <Spacing />
-        </React.Fragment>
+        </Fragment>
     )
 }
-
-export default Style
