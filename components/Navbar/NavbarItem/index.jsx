@@ -1,13 +1,11 @@
 import Link from 'next/link'
 
-const NavigationItem = props => {
+export default function NavbarItem(props) {
     return (
         <li className={props.class}>
-            <Link href={props.url}>
+            <Link href={props.slug}>
                 <a>{props.name}</a>
             </Link>
         </li>
     )
 }
-
-export default NavigationItem

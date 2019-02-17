@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import {string} from 'prop-types'
 
-const FooterItem = props => {
+export default function FooterItem(props) {
     let item
 
     if (props.type === 'next-link') {
         item = (
             <li className={props.class}>
-                <Link href={props.link}>
+                <Link href={props.slug}>
                     <a>{props.name}</a>
                 </Link>
             </li>
@@ -14,7 +15,7 @@ const FooterItem = props => {
     } else {
         item = (
             <li className={props.class}>
-                <a href={props.link}>
+                <a href={props.slug}>
                     {props.name}
                 </a>
             </li>
@@ -24,4 +25,9 @@ const FooterItem = props => {
     return item
 }
 
-export default FooterItem
+FooterItem.propTypes = {
+    type: string,
+    class: string,
+    link: string,
+    name: string
+}

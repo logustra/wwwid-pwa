@@ -1,22 +1,21 @@
 import Link from 'next/link'
-import toExcept from '../../helper/Helper'
+import {string} from 'prop-types'
 
-import {
-    StyledCard,
-    StyledCardThumbnail,
+import StyledCard,{
+    StyledThumbnail,
     StyledTitle,
     StyledDescriptions,
     StyledInfo
 } from './style'
 
-const Card = props => {
+export default function Card(props) {
     return (
-        <Link href={props.url}>
+        <Link href={props.slug}>
             <StyledCard>
-                <StyledCardThumbnail src={props.thumbnail} alt={props.title} />
+                <StyledThumbnail src={props.thumbnail} alt={props.title} />
                 <figcaption>
                     <StyledTitle>{props.title}</StyledTitle>
-                    <StyledDescriptions>{toExcept(props.description, 200)}</StyledDescriptions>
+                    <StyledDescriptions>{props.excerpt}</StyledDescriptions>
                     <StyledInfo>
                         <span>{props.author}</span>
                         <span>{props.date}</span>
@@ -27,4 +26,11 @@ const Card = props => {
     )
 }
 
-export default Card
+Card.propTypes = {
+    slug: string,
+    thumbnail: string,
+    title: string,
+    description: string,
+    author: string,
+    date: string
+}

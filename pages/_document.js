@@ -16,12 +16,13 @@ export default class MyDocument extends Document {
             <html lang="id">
                 <Head>
                     <Manifest
-                        href='./static/manifest/manifest.json'
-                        initialScale='1'
+                        href="./static/manifest/manifest.json"
+                        initialScale="1"
                     />
                     <meta name="description" content="WWWID - challenge | Making web applications can be used less than 5 seconds" />
                     <link rel="icon" href="./static/favicon.ico" />
-                    <link rel='stylesheet' href='./static/css/nprogress.min.css' />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
+                    <link rel="stylesheet" href="./static/css/nprogress.min.css" />
                     {this.props.styleTags}
                 </Head>
 
@@ -29,8 +30,8 @@ export default class MyDocument extends Document {
                     <Main />
                     <NextScript />
                     <ServiceWorker
-                        src={'./static/workbox/sw.js'}
-                        scope={'../'}
+                        src={"./static/workbox/sw.js"}
+                        scope={"../"}
                     />
                 </body>
             </html>

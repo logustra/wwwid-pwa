@@ -1,26 +1,22 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Head from '../Head'
 import Navbar from '../Navbar'
-import Footer from '../Footer';
+import Foobar from '../Foobar';
 
 import GlobalStyle from '../../styles/Main'
 
-class Layout extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Head title={this.props.title} description={this.props.description}/>
-                <GlobalStyle />
-                <Navbar />
-                <main>
-                    <div className="container">
-                        {this.props.children}
-                    </div>
-                </main>
-                <Footer />
-            </React.Fragment>
-        )
-    }
+export default function Layout(props) {
+    return (
+        <React.Fragment>
+            <Head title={props.title} description={props.description} />
+            <GlobalStyle />
+            <Navbar />
+            <main>
+                <div className="container">
+                    {props.children}
+                </div>
+            </main>
+            <Foobar />
+        </React.Fragment>
+    )
 }
-
-export default Layout

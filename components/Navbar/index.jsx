@@ -1,57 +1,40 @@
 import React, { Component } from "react"
-import Styled from 'styled-components'
-import NavbarItem from './NavbarItem';
+import NavbarItem from './NavbarItem'
 
-const StyledNavbar = Styled.nav`
-    .list-item:first-child {
-        font-size: 24px;
-        font-weight: 700;
+import StyledNavbar from './styles'
 
-        a {
-            color: var(--blue);
+export default function Navbar(props) {
+    const navbarItems = [
+        {
+            id: 'w1',
+            name: 'WWWID',
+            slug: '/',
+        },
+        {
+            id: 'c2',
+            name: 'Categories',
+            slug: '/categories?title=categories',
         }
-    }
-`
+    ]
 
-class Navbar extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            navbarItems: [
-                {
-                    name: 'WWWID',
-                    link: '/',
-                },
-                {
-                    name: 'Categories',
-                    link: '/categories',
-                }
-            ]
-        }
+    function renderNavbarItems(data) {
+        return data.map(item => (
+            <NavbarItem
+                key={item.id}
+                slug={item.slug}
+                name={item.name}
+                class="list-item"
+            />
+        ))
     }
 
-    render() {
-        const NavbarItems = this.state.navbarItems.map((item, index) => {
-            return (
-                <NavbarItem
-                    url={item.link}
-                    name={item.name}
-                    class="list-item"
-                    key={index}
-                />
-            )
-        })
-
-        return (
-            <StyledNavbar className="with-background mb-3">
-                <div className="container">
-                    <ul className="list-styled">
-                        {NavbarItems}
-                    </ul>
-                </div>
-            </StyledNavbar>
-        )
-    }
+    return (
+        <StyledNavbar className="with-background mb-3">
+            <div className="container">
+                <ul className="list-styled">
+                    {renderNavbarItems(navbarItems)}
+                </ul>
+            </div>
+        </StyledNavbar>
+    )
 }
-
-export default Navbar;

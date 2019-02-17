@@ -15,3 +15,4 @@ This application is built for [WWWID Challenge](https://medium.com/wwwid/tantang
 
 ## Reference
 Title : [github.com](https://github.com/zeit/next.js/blob/master/errors/no-document-title.md)
+Don't use @import : [stevesouders.com](http://www.stevesouders.com/blog/2009/04/09/dont-use-import)

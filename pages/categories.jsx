@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {useRouter} from '../store'
 
-class Categories extends Component {
-    render() {
-        return (
-            <div>Categories</div>
-        )
-    }
+export default function Categories() {
+    const router = useRouter()
+    return (
+        <div>
+            Categories
+            <pre>{JSON.stringify(router.query)}</pre>
+        </div>
+    )
 }
-
-export default Categories

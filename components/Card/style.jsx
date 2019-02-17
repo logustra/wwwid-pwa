@@ -20,7 +20,7 @@ const StyledCard = Styled.figure `
     }
 `
 
-const StyledCardThumbnail = Styled.img `
+export const StyledThumbnail = Styled.img `
     min-width: 350px;
     height: 225px;
     object-fit: cover;
@@ -29,30 +29,27 @@ const StyledCardThumbnail = Styled.img `
     border-bottom-left-radius: 10px;
 `
 
-const StyledTitle = Styled.h2 `
+export const StyledTitle = Styled.h2 `
     font-size: 21px;
     margin: 0;
 `
 
-const StyledDescriptions = Styled.p `
+export const StyledDescriptions = Styled.p `
     word-break: break-all;
     color: var(--medium-midnight);
     line-height: 23px;
     margin: 23px 0;
 `
 
-const StyledInfo = Styled.p `
+export const StyledInfo = Styled.p `
     font-size: 14px;
+    margin-bottom: 0;
 
     span + span {
         margin-left: 10px;
     }
 `
 
-export {
-    StyledCard,
-    StyledCardThumbnail,
-    StyledTitle,
-    StyledDescriptions,
-    StyledInfo
-}
+export default StyledCard
+
+

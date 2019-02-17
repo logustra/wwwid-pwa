@@ -1,52 +1,47 @@
-import React, { Component } from "react"
+import React, {
+    useEffect,
+    useReducer
+} from "react"
 import axios from '../lib/Axios'
+
+import {retrieveArticles, isLoading} from '../store/action'
+import reducer, {initialState} from '../store/reducer'
 
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 
-class Home extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            articles: null
-        }
-    }
+export default function Home() {
+    const [{articles, loading}, dispatch] = useReducer(reducer, initialState)
 
-    async componentDidMount() {
+    async function getArticles() {
         await axios.get('/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fwwwid')
-                .then((response) => {
-                    this.setState({
-                        articles: response.data.items
-                    })
-                })
-    }
-
-    render() {
-        let articles
-
-        articles = 'loading...'
-
-        if (this.state.articles) {
-            articles = this.state.articles.map((article) => {
-                return (
-                    <Card
-                        key={article.title}
-                        thumbnail={article.thumbnail}
-                        title={article.title}
-                        description={article.description}
-                        author={article.author}
-                        date={article.pubDate}
-                    />
-                )
+            .then((response) => {
+                retrieveArticles(dispatch, response.data.items)
+                isLoading(dispatch, false)
             })
-        }
-
-        return (
-            <Layout>
-                {articles}
-            </Layout>
-        )
     }
-}
 
-export default Home;
+    useEffect(() => {
+        getArticles()
+    }, [])
+
+    function renderArticles(data) {
+        return data.map(item => (
+            <Card
+                key={item.id}
+                slug={item.slug}
+                thumbnail={item.thumbnail}
+                title={item.title}
+                excerpt={item.excerpt}
+                author={item.author}
+                date={item.data}
+            />
+        ))
+    }
+
+    return (
+        <Layout>
+            {loading ? 'loading...' : renderArticles(articles)}
+        </Layout>
+    )
+}

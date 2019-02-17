@@ -1,8 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyleBase = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-
     body {
         font-family: 'Lato', sans-serif;
         font-size: 16px;
