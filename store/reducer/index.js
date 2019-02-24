@@ -1,6 +1,7 @@
 import {
     getId,
     convertToSlug,
+    convertToTitle,
     convertToExcerpt
 } from '../../helper'
 
@@ -21,7 +22,11 @@ export default function reducer(state, action) {
                     date: new Date(article.pubDate).toLocaleDateString(),
                     author: article.author,
                     thumbnail: article.thumbnail,
-                    categories: article.categories,
+                    categories: article.categories.map((category, index) => ({
+                        id: index,
+                        slug: category,
+                        title: convertToTitle(category)
+                    })),
                     excerpt: convertToExcerpt(article.description, 250),
                     description: article.description
                 }))

@@ -3,11 +3,11 @@ import { useRouter } from '../../store'
 
 export default function Categories() {
     const router = useRouter()
+    const data = router.query
 
     return (
         <div>
-            Categories
-            <pre>{JSON.stringify(router.query.title)}</pre>
+            {data.title}
         </div>
     )
 }

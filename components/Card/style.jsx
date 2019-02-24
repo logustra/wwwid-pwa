@@ -28,7 +28,7 @@ export const StyledDescription = Styled.p `
 `
 
 export const StyledInfo = Styled.p `
-    font-size: ${Fonts.size.md[14]}
+    font-size: ${Fonts.size.md[13]};
     margin-bottom: 0;
 
     span + span {
@@ -51,7 +51,7 @@ const StyledCard = Styled.figure`
     cursor: pointer;
 
     &:first-of-type {
-        margin-top: 30px;
+        margin-top: 95px;
     }
 
     &:hover {

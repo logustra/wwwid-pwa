@@ -4,12 +4,15 @@ import NavbarItem from './NavbarItem'
 import {Container} from '../../styles'
 import StyledNavbar from './style'
 
+import ImgLogo from '../../static/images/logo.svg'
+
 export default function Navbar(props) {
     const navbarItems = [
         {
             id: 'w1',
             name: 'WWWID',
             slug: '/',
+            img: ImgLogo,
         },
         {
             id: 'c2',
@@ -24,13 +27,14 @@ export default function Navbar(props) {
                 key={item.id}
                 slug={item.slug}
                 name={item.name}
+                img={item.img}
                 class="list-item"
             />
         ))
     }
 
     return (
-        <StyledNavbar className="with-background">
+        <StyledNavbar>
             <Container>
                 <ul className="list-styled">
                     {renderNavbarItems(navbarItems)}

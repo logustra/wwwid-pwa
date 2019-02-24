@@ -40,6 +40,7 @@ export default function Home() {
                 description={item.description}
                 author={item.author}
                 date={item.date}
+                categories={JSON.stringify(item.categories)}
             />
         ))
     }

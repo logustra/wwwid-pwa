@@ -4,14 +4,22 @@ import {rgba} from 'polished'
 import {
     Colors,
     Fonts,
-    Container
+    Container,
+    ListInline,
 } from '../../styles'
 
 export const StyledTitle = Styled.h1`
     text-align: center;
     font-size: ${Fonts.size.xl[38]};
     margin-top: 0;
+    margin-bottom: 50px;
     font-weight: ${Fonts.weight.bold};
+`
+
+export const StyledThumbnail = Styled.img`
+    width: 100%;
+    height: 586px;
+    object-fit: cover;
 `
 
 export const StyledDescription = Styled.div`
@@ -23,7 +31,7 @@ export const StyledDescription = Styled.div`
 
     h3 {
         font-family: ${Fonts.family.systemUI};
-        font-size: ${Fonts.size.xl[34]}
+        font-size: ${Fonts.size.xl[34]};
     }
 
     a {
@@ -37,8 +45,8 @@ export const StyledDescription = Styled.div`
     }
 
     pre {
-        padding: 20px 20px 20px 20px;
-        font-size: ${Fonts.size.md[16]};;
+        padding: 20px;
+        font-size: 16px;
         background-color: ${rgba(Colors.darkSmoke, .5)};
         margin-top: 35px;
         white-space: pre-wrap;
@@ -71,8 +79,15 @@ export const StyledDescription = Styled.div`
 
 const StyledDetail = Styled.div`
    ${Container} {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        position: relative;
+        margin-top: -250px;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        z-index: 1;
+
+        ${ListInline} {
+            margin-top: 50px;
+        }
    }
 `
 

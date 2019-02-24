@@ -8,7 +8,9 @@ import {
 } from './base'
 
 import {
-    Container
+    Container,
+    ListInline,
+    ListInlineItem,
 } from './components'
 
 import {
@@ -20,6 +22,8 @@ export {
     Colors,
     Fonts,
     Container,
+    ListInline,
+    ListInlineItem,
     MediaQueryMax,
     MediaQueryMin
 }

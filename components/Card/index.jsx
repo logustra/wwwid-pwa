@@ -1,5 +1,8 @@
 import Link from 'next/link'
-import {string} from 'prop-types'
+import {
+    string,
+    object
+} from 'prop-types'
 
 import StyledCard,{
     StyledThumbnail,
@@ -17,7 +20,9 @@ export default function Card(props) {
                     pathname: '/detail',
                     query: {
                         title: props.title,
-                        description: props.description
+                        thumbnail: props.thumbnail,
+                        description: props.description,
+                        categories: props.categories,
                     }
                 }
             }>
@@ -43,5 +48,6 @@ Card.propTypes = {
     title: string,
     description: string,
     author: string,
-    date: string
+    date: string,
+    // categories: object,
 }
