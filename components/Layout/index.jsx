@@ -3,7 +3,7 @@ import Head from '../Head'
 import Navbar from '../Navbar'
 import Foobar from '../Foobar';
 
-import GlobalStyle from '../../styles/Main'
+import GlobalStyle from '../../styles'
 
 export default function Layout(props) {
     return (
@@ -12,9 +12,7 @@ export default function Layout(props) {
             <GlobalStyle />
             <Navbar />
             <main>
-                <div className="container">
-                    {props.children}
-                </div>
+                {props.children}
             </main>
             <Foobar />
         </Fragment>

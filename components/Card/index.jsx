@@ -4,18 +4,29 @@ import {string} from 'prop-types'
 import StyledCard,{
     StyledThumbnail,
     StyledTitle,
-    StyledDescriptions,
+    StyledDescription,
     StyledInfo
 } from './style'
 
 export default function Card(props) {
     return (
-        <Link href={props.slug}>
+        <Link
+            as={`/article/${props.slug}`}
+            href={
+                {
+                    pathname: '/detail',
+                    query: {
+                        title: props.title,
+                        description: props.description
+                    }
+                }
+            }>
+
             <StyledCard>
                 <StyledThumbnail src={props.thumbnail} alt={props.title} />
                 <figcaption>
                     <StyledTitle>{props.title}</StyledTitle>
-                    <StyledDescriptions>{props.excerpt}</StyledDescriptions>
+                    <StyledDescription>{props.excerpt}</StyledDescription>
                     <StyledInfo>
                         <span>{props.author}</span>
                         <span>{props.date}</span>

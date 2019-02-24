@@ -1,4 +1,8 @@
 import React from "react"
+
+import {Container} from '../../styles'
+import StyledFooter from './style'
+
 import FoobarItem from './FoobarItem';
 
 export default function Foobar() {
@@ -43,12 +47,12 @@ export default function Foobar() {
     }
 
     return (
-        <footer className="with-background mt-3">
-            <div className="container">
+        <StyledFooter className="with-background">
+            <Container>
                 <ul className="list-styled">
                     {renderArticles(foobarItems)}
                 </ul>
-            </div>
-        </footer>
+            </Container>
+        </StyledFooter>
     )
 }

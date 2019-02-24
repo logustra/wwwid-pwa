@@ -5,9 +5,9 @@ export function isLoading(dispatch, loading) {
     });
 }
 
-export function receiveFeeds(dispatch, feeds) {
+export function receiveArticles(dispatch, articles) {
     dispatch({
-        type: 'RECEIVE_FEEDS',
-        feeds
+        type: 'RECEIVE_ARTICLES',
+        articles
     });
 }

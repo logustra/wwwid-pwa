@@ -1,12 +1,3 @@
-import React from 'react'
-import {useRouter} from '../store'
+import Categories from '../partials/Categories'
 
-export default function Categories() {
-    const router = useRouter()
-    return (
-        <div>
-            Categories
-            <pre>{JSON.stringify(router.query)}</pre>
-        </div>
-    )
-}
+export default Categories

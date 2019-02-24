@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import {css} from 'styled-components';
 
 const screens = {
     max: {
@@ -17,8 +17,8 @@ const screens = {
     }
 }
 
-const mq_max = Object.keys(screens.max).reduce((acc, label) => {
-    acc[label] = (...args) => css`
+const MediaQueryMax = Object.keys(screens.max).reduce((acc, label) => {
+    acc[label] = (...args) => css `
         @media (max-width: ${screens.max[label]}px) {
             ${css(...args)}
         }
@@ -27,7 +27,7 @@ const mq_max = Object.keys(screens.max).reduce((acc, label) => {
     return acc
 }, {})
 
-const mq_min = Object.keys(screens.min).reduce((acc, label) => {
+const MediaQueryMin = Object.keys(screens.min).reduce((acc, label) => {
     acc[label] = (...args) => css `
         @media (min-width: ${screens.min[label]}px) {
             ${css(...args)}
@@ -38,6 +38,6 @@ const mq_min = Object.keys(screens.min).reduce((acc, label) => {
 }, {})
 
 export {
-    mq_max,
-    mq_min
+    MediaQueryMax,
+    MediaQueryMin
 }

@@ -21,7 +21,6 @@ export default class MyDocument extends Document {
                     />
                     <meta name="description" content="WWWID - challenge | Making web applications can be used less than 5 seconds" />
                     <link rel="icon" href="./static/favicon.ico" />
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
                     <link rel="stylesheet" href="./static/css/nprogress.min.css" />
                     {this.props.styleTags}
                 </Head>

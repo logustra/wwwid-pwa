@@ -1,4 +1,16 @@
 {
+    "env": {
+        "production": {
+            "plugins": [
+                [
+                    "styled-components",
+                    {
+                        "displayName": false,
+                    }
+                ],
+            ]
+        }
+    },
     "presets": [
         "next/babel"
     ],
@@ -7,7 +19,6 @@
             "styled-components",
             {
                 "ssr": true,
-                "displayName": true,
                 "preprocess": false
             }
         ],

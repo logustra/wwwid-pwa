@@ -1,25 +1,22 @@
 import {createGlobalStyle} from 'styled-components'
 
-const GlobalStyleBase = createGlobalStyle`
+import {
+    Colors,
+    Fonts
+} from '../'
+
+const GlobalStyleBase = createGlobalStyle `
     body {
-        font-family: 'Lato', sans-serif;
-        font-size: 16px;
-        color: var(--midnight);
-        background: var(--smoke);
+        font-family: ${Fonts.family.systemUI};
+        font-size: ${Fonts.size.md[16]};
+        color: ${Colors.midnight};
+        background: ${Colors.smoke};
         margin: 0;
     }
 
     a {
         text-decoration: none;
-        color: var(--midnight);
-    }
-
-    .container {
-        width: 89%;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: auto;
-        margin-right: auto;
+        color: ${Colors.midnight};
     }
 
     .list-styled {
@@ -37,8 +34,7 @@ const GlobalStyleBase = createGlobalStyle`
     }
 
     .with-background {
-        background: var(--white);
-        height: 50px;
+        background: ${Colors.white};
         display: flex;
         align-items: center;
 
@@ -47,12 +43,6 @@ const GlobalStyleBase = createGlobalStyle`
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .container {
-            width: 77%;
         }
     }
 `

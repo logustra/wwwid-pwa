@@ -1,7 +1,3 @@
-import React from 'react'
+import About from '../partials/About'
 
-export default function About() {
-    return (
-        <div>About</div>
-    )
-}
+export default About

@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import NavbarItem from './NavbarItem'
 
-import StyledNavbar from './styles'
+import {Container} from '../../styles'
+import StyledNavbar from './style'
 
 export default function Navbar(props) {
     const navbarItems = [
@@ -29,12 +30,12 @@ export default function Navbar(props) {
     }
 
     return (
-        <StyledNavbar className="with-background mb-3">
-            <div className="container">
+        <StyledNavbar className="with-background">
+            <Container>
                 <ul className="list-styled">
                     {renderNavbarItems(navbarItems)}
                 </ul>
-            </div>
+            </Container>
         </StyledNavbar>
     )
 }
