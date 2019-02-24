@@ -5,25 +5,25 @@ import {
 } from '../../helper'
 
 export const initialState = {
-    articles: [],
+    feeds: [],
     loading: true
 }
 
 export default function reducer(state, action) {
     switch (action.type) {
-        case 'RETRIEVE_ARTICLES':
+        case 'RECEIVE_FEEDS':
             return {
                 ...state,
-                articles: action.articles.map(article => ({
-                    id: getId(article.guid),
-                    slug: convertToSlug(article.title),
-                    title: article.title,
-                    date: article.pubDate,
-                    author: article.author,
-                    thumbnail: article.thumbnail,
-                    categories: article.categories,
-                    excerpt: convertToExcerpt(article.description, 250),
-                    description: article.description
+                feeds: action.feeds.map(feed => ({
+                    id: getId(feed.guid),
+                    slug: convertToSlug(feed.title),
+                    title: feed.title,
+                    date: feed.pubDate,
+                    author: feed.author,
+                    thumbnail: feed.thumbnail,
+                    categories: feed.categories,
+                    excerpt: convertToExcerpt(feed.description, 250),
+                    description: feed.description
                 }))
             }
 
