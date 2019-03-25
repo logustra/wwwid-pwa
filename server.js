@@ -2,7 +2,7 @@ const { join } = require('path')
 const express = require('express')
 const next = require('next')
 
-const port = parseInt(process.env.PORT, 10) || 3007
+const port = parseInt(process.env.PORT, 10) || 3028
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const root = process.cwd()

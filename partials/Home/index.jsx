@@ -1,16 +1,11 @@
-import React, {
-    useEffect,
-    useReducer
-} from "react"
+import React, {useEffect, useReducer} from "react"
 import axios from '../../lib/Axios'
 
 import {isLoading, receiveArticles} from '../../store/action'
 import reducer, {initialState} from '../../store/reducer'
 
-import {Container} from '../../styles'
-
-import Layout from '../../components/Layout'
-import Card from '../../components/Card'
+import {Layout, Container} from '../../components/templates'
+import {Article} from '../../components/molecules'
 
 export default function Home() {
     const [{articles, loading}, dispatch] = useReducer(reducer, initialState)
@@ -31,7 +26,7 @@ export default function Home() {
         console.log(data)
         console.log(loading)
         return data.map(item => (
-            <Card
+            <Article
                 key={item.id}
                 slug={item.slug}
                 thumbnail={item.thumbnail}

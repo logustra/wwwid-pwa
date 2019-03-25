@@ -15,3 +15,4 @@ This application is built for [WWWID Challenge](https://medium.com/wwwid/tantang
 
 ## Reference
 Title : [github.com](https://github.com/zeit/next.js/blob/master/errors/no-document-title.md) <br />
+Atomic Design : [bradfrost.com](http://bradfrost.com/blog/post/atomic-web-design/) <br />

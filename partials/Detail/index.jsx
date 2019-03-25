@@ -3,33 +3,34 @@ import ReactHtmlParser from 'react-html-parser'
 import Link from 'next/link'
 import {useRouter} from '../../store'
 
+import {Colors, Fonts} from '../../components/_base'
+
 import {
-    Colors,
-    Container,
-    ListInline,
-    ListInlineItem
-} from '../../styles'
+    Card,
+    Thumbnail,
+    Title,
+    Description,
+    List,
+    ListItem
+} from '../../components/atoms'
+import {Layout, Container} from '../../components/templates'
 
-import StyledDetail, {
-    StyledTitle,
-    StyledThumbnail,
-    StyledDescription
-} from './style'
-
-import Layout from '../../components/Layout'
+import StyledDetail from '../Detail/style'
 
 export default function Detail(props) {
     const router = useRouter()
     const data = router.query
 
     function renderCategories(categories) {
-        console.log(categories)
         return (
-            <ListInline background>
+            <List>
                 {
                     JSON.parse(categories).map(category => {
                         return (
-                            <ListInlineItem key={category.id}>
+                            <ListItem
+                                display="inline"
+                                key={category.id}
+                            >
                                 <Link
                                     as={`/category/${category.slug}`}
                                     href={
@@ -39,27 +40,45 @@ export default function Detail(props) {
                                                 title: category.title,
                                             }
                                         }
-                                    }>
+                                    }
+                                >
                                     <a>{category.title}</a>
                                 </Link>
-                            </ListInlineItem>
+                            </ListItem>
                         )
                     })
                 }
-            </ListInline>
+            </List>
         )
     }
 
     return (
         <Layout>
             <StyledDetail>
-                <StyledThumbnail src={data.thumbnail} alt={data.titls}/>
-                <Container background={Colors.white}>
-                    <StyledTitle>{data.title}</StyledTitle>
-                    <StyledDescription>
-                        {ReactHtmlParser(data.description)}
-                        {renderCategories(data.categories)}
-                    </StyledDescription>
+                <Thumbnail
+                    src={data.thumbnail}
+                    alt={data.title}
+                />
+
+                <Container>
+                    <Card type="rounded-top">
+                        <Title
+                            size="xl"
+                            xl="38"
+                            className="text-center"
+                        >
+                            {data.title}
+                        </Title>
+
+                        <Description
+                            size="lg"
+                            lg="21"
+                            family={Fonts.family.georgia}
+                        >
+                            {ReactHtmlParser(data.description)}
+                            {renderCategories(data.categories)}
+                        </Description>
+                    </Card>
                 </Container>
             </StyledDetail>
         </Layout>
