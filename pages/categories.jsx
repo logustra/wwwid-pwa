@@ -1,3 +1,3 @@
-import Categories from '../partials/Categories'
+import Categories from '../modules/Categories'
 
 export default Categories

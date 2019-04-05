@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withWorkbox = require('next-workbox');
 const withManifest = require('next-manifest');
-const optimizedImages = require('next-optimized-images');
 
 const nextConfig = {
     webpack: (config) => {
@@ -20,19 +19,6 @@ const nextConfig = {
                             name: "[name].[ext]",
                             publicPath: "/_next/",
                             outputPath: "static/fonts"
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.(webm|mp4|mov|mkv|avi)$/i,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "[name].[ext]",
-                            publicPath: "/_next/",
-                            outputPath: "static/videos"
                         }
                     }
                 ]
@@ -68,40 +54,5 @@ module.exports = withPlugins([
                 }
             }
         }
-    ],
-    [
-        optimizedImages, {
-            inlineImageLimit: 8192,
-            imagesFolder: 'images',
-            imagesName: '[name]-[hash].[ext]',
-            optimizeImagesInDev: false,
-            mozjpeg: {
-                progressive: true,
-                quality: 75
-            },
-            optipng: {
-                enabled: false,
-                optimizationLevel: 3,
-            },
-            pngquant: {
-                quality: 75,
-                speed: 4
-            },
-            gifsicle: {
-                interlaced: false,
-                optimizationLevel: 3,
-            },
-            svgo: {
-                options: {
-                    cleanupIDs: true,
-                    convertColors: true,
-                    removeViewBox: true
-                }
-            },
-            webp: {
-                preset: 'default',
-                quality: 75,
-            },
-        }
-    ],
+    ]
 ], nextConfig);

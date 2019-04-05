@@ -1,3 +1,3 @@
-import Home from '../partials/Home'
+import Home from '../modules/Home'
 
 export default Home

@@ -1,3 +1,3 @@
-import About from '../partials/About'
+import About from '../modules/About'
 
 export default About

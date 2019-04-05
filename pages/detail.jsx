@@ -1,3 +1,3 @@
-import Detail from '../partials/Detail'
+import Detail from '../modules/Detail'
 
 export default Detail
