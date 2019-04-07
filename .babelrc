@@ -6,13 +6,14 @@
                     "styled-components",
                     {
                         "displayName": false,
+                        "pure": true
                     }
                 ],
             ]
         }
     },
     "presets": [
-        "next/babel"
+        ["next/babel", "@zeit/next-typescript/babel"]
     ],
     "plugins": [
         [

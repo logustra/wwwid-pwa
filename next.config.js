@@ -1,6 +1,9 @@
-const withPlugins = require('next-compose-plugins');
-const withWorkbox = require('next-workbox');
-const withManifest = require('next-manifest');
+const withTypescript = require('@zeit/next-typescript')
+const withPlugins = require('next-compose-plugins')
+const withWorkbox = require('next-workbox')
+const withManifest = require('next-manifest')
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
+const styledComponentsTransformer = createStyledComponentsTransformer()
 
 const nextConfig = {
     webpack: (config) => {
@@ -10,6 +13,15 @@ const nextConfig = {
         }
 
         config.module.rules.push(
+            {
+                test: /\.(ts|tsx)$/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    getCustomTransformers: () => ({
+                        before: [styledComponentsTransformer]
+                    })
+                }
+            },
             {
                 test: /\.(otf|ttf|eot|woff|woff2)$/i,
                 use: [
@@ -30,6 +42,9 @@ const nextConfig = {
 }
 
 module.exports = withPlugins([
+    [
+        withTypescript
+    ],
     [
         withWorkbox, {
             workbox: {
