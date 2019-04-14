@@ -6,7 +6,7 @@ import Router, {withRouter} from 'next/router'
 
 import {RouterContext} from '../store'
 
-Router.events.on('routeChangeStart', url => {
+Router.events.on('routeChangeStart', (url: string) => {
   console.log(`Loading: ${url}`)
   NProgress.start()
 })
@@ -15,7 +15,9 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 const InjectRouterContext = withRouter(({ router, children }) => {
     return (
-        <RouterContext.Provider value={router}>{children}</RouterContext.Provider>
+        <RouterContext.Provider value={router}>
+            {children}
+        </RouterContext.Provider>
     )
 })
 
